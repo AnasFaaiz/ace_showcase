@@ -1,4 +1,4 @@
-import { FolderKanban, GitFork, Newspaper, LayoutDashboard, Clock } from 'lucide-react';
+import { FolderKanban, GitFork, Newspaper, LayoutDashboard } from 'lucide-react';
 
 const CommandReferenceSection = () => {
   return (
@@ -94,7 +94,7 @@ const CommandReferenceSection = () => {
             </p>
           </div>
           <div id="cmd-schedule-add" className="scroll-mt-28">
-            <h4 className="text-xl font-bold font-mono text-[#a6e3a1]">ace schedule add "[time]" "[command]"</h4>
+            <h4 className="text-xl font-bold font-mono text-[#a6e3a1]">ace schedule add &quot;[time]&quot; &quot;[command]&quot;</h4>
             <p className="text-[#9399b2] mt-2 leading-relaxed">
               Adds a recurring task to A.C.E.'s internal scheduler. For example, `ace schedule add "every day at 09:00" "ace news"`.
             </p>
