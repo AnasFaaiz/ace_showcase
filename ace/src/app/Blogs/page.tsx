@@ -43,7 +43,7 @@ export default function BlogPage() {
   const posts = [
     {
 	title:"Introducing A.C.E.: The AI Project That Solves My Headache",
-	summary:"Between university assignments and personal projects, I was drowning in repetitive tasks. To fix this, I built A.C.E., a personal AI assistant that automates my entire workflow right from the terminal. It's the story of how I'm using Python and a bit of AI to build the tool I always wished I had.",
+	summary:"Between university assignments and personal projects, I was drowning in repetitive tasks. To fix this, I built A.C.E., a personal AI assistant that automates my entire workflow right from the terminal. It&apos;s the story of how I'm using Python and a bit of AI to build the tool I always wished I had.",
 	link:"#"
     }
 

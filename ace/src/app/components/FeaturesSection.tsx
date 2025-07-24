@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FolderKanban, GitFork, Newspaper, Rocket, Clock, LayoutDashboard } from 'lucide-react';
+import { FolderKanban, GitFork, Newspaper, Rocket } from 'lucide-react';
 
 const FeaturesSection = () => {
   return (
