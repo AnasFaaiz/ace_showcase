@@ -3,8 +3,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Terminal from './components/Terminal.tsx';
-import FeaturesSection from './components/FeaturesSection.tsx';
+import Terminal from './components/Terminal';
+import FeaturesSection from './components/FeaturesSection';
 
 const TypingText = ({ text, onComplete }: { text: string; onComplete?: () => void }) => {
   const [displayedText, setDisplayedText] = useState('');
