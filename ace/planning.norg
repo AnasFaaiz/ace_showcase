@@ -1,0 +1,91 @@
+* ACE_Showcase Website:
+
+** Features planned
+*** HomePage
+*** Docs
+*** Blog
+*** Contact Page
+
+** Technologies Planned:
+*** Nextjs with Typescript
+*** Github
+*** Vercel Hosting
+
+* In Details Features:
+
+** HomePage:
+*** ACE Introduction
+*** Some Gifs to showcase ACE work
+*** Commands List
+
+** Docs
+*** Requirements needed for ACE
+*** Workflow
+
+** Blog
+*** small summary Blogs showcasing how it is built
+*** Must be connected to my portfolio blog for full article
+*** Plan Design of It 
+
+** Contact Page
+*** Details like my discord, email, linkedin, portfolio
+
+* Design System: "Modern Terminal"
+
+  The website's theme will be inspired by modern terminal aesthetics to feel authentic to A.C.E.'s environment.
+
+  ** Color Palette: Catppuccin (Mocha Flavor)
+  - /Background/: `#1e1e2e` (Base)
+  - /Text/: `#cdd6f4` (Text)
+  - /Headings & Borders/: `#9399b2` (Overlay2)
+  - /Primary Accent/: `#cba6f7` (Mauve) - For buttons and links.
+  - /Secondary Accent/: `#94e2d5` (Teal) - For highlights.
+
+  ** Typography
+  - /Headings & Body/: Inter (sans-serif)
+  - /Code & Commands/: JetBrains Mono (monospace)
+
+  ** UI Elements
+  - Main content will be in a bordered "window".
+  - Feature showcases will use "pane" layouts inspired by `tmux`.
+  - Headings will be styled to look like a command prompt.
+  - Subtle "blinking cursor" and "glow" effects will be used for an authentic feel.
+
+* Page-by-Page Content Plan
+
+  ** Homepage (`/app/page.tsx`)
+  - *** Hero Section
+    - Heading: `A.C.E.`
+    - Tagline: `Your Personal AI Assistant for the Terminal.`
+    - Buttons: "Get Started" (links to `/docs`) and "View on GitHub".
+  - *** GIF Showcase
+    - Heading: `See A.C.E. in Action`
+    - Content: A grid of 3 animated GIFs in `tmux`-style panes, showcasing:
+      1. `ace project create`
+      2. `ace save`
+      3. `ace dashboard start`
+  - *** Commands List
+    - Heading: `A Command for Everything`
+    - Content: A styled code block listing the most important A.C.E. commands.
+
+  ** Docs Page (`/app/docs/page.tsx`)
+  - *** Layout
+    - A two-column layout with a navigation sidebar on the left and main content on the right.
+  - *** Content
+    - /Requirements/: A section detailing what's needed to install and run A.C.E. (Python, Node.js, etc.).
+    - /Workflow/: A guide on how to get started, from installation to using the core commands.
+
+  ** Blog Page (`/app/blog/page.tsx`)
+  - *** Layout
+    - A simple grid of "blog cards".
+  - *** Content
+    - Each card will have a title and a 2-3 sentence summary of a blog post.
+    - Each card will have a button: `"Read Full Article ->"` that links to the full post on your main portfolio blog.
+
+  ** Contact Page (`/app/contact/page.tsx`)
+  - *** Layout
+    - A simple, centered section.
+  - *** Content
+    - A short message ("Let's connect").
+    - Icons and links for your Discord, Email, LinkedIn, and main Portfolio.
+
