@@ -28,7 +28,7 @@ const CommandReferenceSection = () => {
               Registers an existing local Git project with A.C.E. It intelligently scans the folder, uses the folder name to query the GitHub API, and automatically discovers the remote repository URL, saving all details to its memory.
             </p>
              <p className="text-sm text-gray-500 mt-2">
-              <span className="font-semibold text-gray-400">Why this is useful:</span> It's the fastest way to teach A.C.E. about all your existing projects, turning it into a central hub for your entire workspace without any manual data entry.
+              <span className="font-semibold text-gray-400">Why this is useful:</span> It&apos;s the fastest way to teach A.C.E. about all your existing projects, turning it into a central hub for your entire workspace without any manual data entry.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ const CommandReferenceSection = () => {
             <div id="cmd-save" className="scroll-mt-28">
                 <h4 className="text-xl font-bold font-mono text-[#a6e3a1]">ace save [nickname]</h4>
                 <p className="text-[#9399b2] mt-2 leading-relaxed">
-                Initiates a safe, interactive "precaution mode" workflow to save your work. It shows you the `git status`, asks for confirmation, gets a commit message from you, and then runs `git add`, `commit`, and `push` automatically.
+                Initiates a safe, interactive &quot;precaution mode&quot; workflow to save your work. It shows you the &apos;git status&apos;, asks for confirmation, gets a commit message from you, and then runs &apos;git add&apos;, &apos;commit&apos;, and &apos;push&apos; automatically.
                 </p>
                 <p className="text-sm text-gray-500 mt-2">
                     <span className="font-semibold text-gray-400">Why this is useful:</span> It automates the three most repetitive Git commands while enforcing best practices, like reviewing changes and writing meaningful commit messages, preventing common mistakes.
@@ -71,10 +71,10 @@ const CommandReferenceSection = () => {
             <div id="cmd-overview" className="scroll-mt-28">
                 <h4 className="text-xl font-bold font-mono text-[#a6e3a1]">ace overview</h4>
                 <p className="text-[#9399b2] mt-2 leading-relaxed">
-                Provides a multi-threaded "mission control" report. It checks the Git status and last commit for all registered projects in parallel, delivering a near-instant response.
+                Provides a multi-threaded &quot;mission control&quot; report. It checks the Git status and last commit for all registered projects in parallel, delivering a near-instant response.
                 </p>
                 <p className="text-sm text-gray-500 mt-2">
-                    <span className="font-semibold text-gray-400">Why this is useful:</span> It instantly answers the question, "Did I forget to push my work anywhere today?" without you having to manually check each project.
+                    <span className="font-semibold text-gray-400">Why this is useful:</span> It instantly answers the question, &quot;Did I forget to push my work anywhere today?&quot; without you having to manually check each project.
                 </p>
             </div>
         </div>
@@ -96,13 +96,13 @@ const CommandReferenceSection = () => {
           <div id="cmd-schedule-add" className="scroll-mt-28">
             <h4 className="text-xl font-bold font-mono text-[#a6e3a1]">ace schedule add &quot;[time]&quot; &quot;[command]&quot;</h4>
             <p className="text-[#9399b2] mt-2 leading-relaxed">
-              Adds a recurring task to A.C.E.'s internal scheduler. For example, `ace schedule add "every day at 09:00" "ace news"`.
+              Adds a recurring task to A.C.E.&apos;s internal scheduler. For example, `ace schedule add &quot;every day at 09:00&quot; &quot;ace news&quot;`.
             </p>
           </div>
            <div id="cmd-scheduler-start" className="scroll-mt-28">
             <h4 className="text-xl font-bold font-mono text-[#a6e3a1]">ace scheduler start</h4>
             <p className="text-[#9399b2] mt-2 leading-relaxed">
-              Starts the persistent, lightweight "watcher" process in the current terminal to execute all of your scheduled tasks at the correct times.
+              Starts the persistent, lightweight &quot;watcher&quot; process in the current terminal to execute all of your scheduled tasks at the correct times.
             </p>
           </div>
         </div>

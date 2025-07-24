@@ -59,7 +59,7 @@ export default function BlogPage() {
             The A.C.E. Blog
           </h1>
           <p className="mt-4 text-lg text-[#9399b2]">
-            The developer's diary. A look behind the scenes of how A.C.E. was built.
+            The developer&apos;s diary. A look behind the scenes of how A.C.E. was built.
           </p>
         </header>
 
