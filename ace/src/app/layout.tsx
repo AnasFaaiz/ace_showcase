@@ -1,5 +1,5 @@
-import Navbar from './components/Navbar.tsx';
-import Terminal from './components/Terminal.tsx'
+import Navbar from './components/Navbar';
+import Terminal from './components/Terminal'
 import './globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
