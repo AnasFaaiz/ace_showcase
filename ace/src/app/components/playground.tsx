@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Terminal from '../components/Terminal';
 
-
 //const BlinkingCursor = () => <span className="w-2 h-5 bg-[#f5c2e7] inline-block animate-pulse"></span>;
 
 const Prompt = ({ children }: { children: React.ReactNode }) => (
