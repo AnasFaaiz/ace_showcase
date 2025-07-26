@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Terminal from './components/Terminal';
 import FeaturesSection from './components/FeaturesSection';
+import Playground from './components/playground';
 
 const TypingText = ({ text, onComplete }: { text: string; onComplete?: () => void }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -77,6 +78,15 @@ export default function Home(){
 		   </div>
 		</section>
 		<FeaturesSection />
+
+		<section className="w-full py-10">
+		  <div className="text-center mb-12">
+		    <h2 className="text-4x1 md:text-5x1 font-bold text-[#cdd6f4]">
+		    Try A.C.E. Live
+		    </h2>
+		  </div>
+		  <Playground />
+		</section>
 	   </main>
 	);
 }
