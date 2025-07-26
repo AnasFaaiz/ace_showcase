@@ -1,8 +1,6 @@
 import Link from 'next/link';
-// We'll use an icon for the "Read More" link.
 import { ArrowRight } from 'lucide-react';
 
-// --- Reusable BlogCard Component ---
 // It's good practice to create a small component for the repeating elements.
 type BlogCardProps = {
   title: string;
@@ -12,7 +10,6 @@ type BlogCardProps = {
 
 const BlogCard = ({ title, summary, link }: BlogCardProps) => {
   return (
-    // The card is a link that wraps the entire content.
     <Link 
       href={link} 
       target="_blank" // Opens the link in a new tab
