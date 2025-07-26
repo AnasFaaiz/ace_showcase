@@ -15,10 +15,16 @@ const Prompt = ({ children }: { children: React.ReactNode }) => (
    </div>
 );
 
+type SimulatedProjects = {
+   local_path: string,
+   remote_url: string,
+};
+
 const Playground = () => {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<React.ReactNode[]>([]);
-  const [simulatedProjects, setSimulatedProjects] = useState<{ [key: string]: any}>({});
+
+  const [simulatedProjects, setSimulatedProjects] = useState<Record<string, SimulatedProjects>>({});
   const terminalEndRef = useRef<null | HTMLDivElement>(null);
 
   const handleCommand = (command: string) => {
@@ -39,18 +45,22 @@ const Playground = () => {
 		}
 		const output = ["--- A.C.E. Registered Projects ---"];
 		projectNames.forEach(name => {
-		   output.push('\n  - Nickname: ${name}');
+		   output.push(`\n  - Nickname: ${name}`);
 		});
 		output.push("------------------------------------");
 		return output;
 	}
 	
-	if(command.startsWith('ace project registre ')) {
+	if(command.startsWith('ace project register ')) {
 		const projectName= command.split(' ')[3];
 		if(!projectName){
 			return [<span className="text-[#f38ba8]">Usage: ace project register [project-name]</span>];
 		}
-		setSimulatedProjects(prev => ({ ...prev, [projectName]: {} }));
+		setSimulatedProjects(prev => ({ ...prev, [projectName]: {
+		   local_path: `/home/user/dev/${projectName}`,
+		   remote_url: `https://github.com/user/${projectName}.git`
+		   } 
+		}));
 		return [` Success! Project '${projectName}' is now registered with A.C.E.`];
 	}
 	return [<span className="text-[#f38ba8]">Command not found: &apos;{command}&apos;. Type &apos;help&apos; for a list of commands.</span>];
