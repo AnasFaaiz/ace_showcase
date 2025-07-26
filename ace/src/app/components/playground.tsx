@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import Terminal from '../components/Terminal';
-
+import Terminal from './Terminal';
 //const BlinkingCursor = () => <span className="w-2 h-5 bg-[#f5c2e7] inline-block animate-pulse"></span>;
 
 const Prompt = ({ children }: { children: React.ReactNode }) => (
@@ -53,7 +52,7 @@ const Playground = () => {
 	if(command.startsWith('ace project register ')) {
 		const projectName= command.split(' ')[3];
 		if(!projectName){
-			return [<span className="text-[#f38ba8]">Usage: ace project register [project-name]</span>];
+			return [<span key="usage-error" className="text-[#f38ba8]">Usage: ace project register [project-name]</span>];
 		}
 		setSimulatedProjects(prev => ({ ...prev, [projectName]: {
 		   local_path: `/home/user/dev/${projectName}`,
@@ -62,7 +61,7 @@ const Playground = () => {
 		}));
 		return [` Success! Project '${projectName}' is now registered with A.C.E.`];
 	}
-	return [<span className="text-[#f38ba8]">Command not found: &apos;{command}&apos;. Type &apos;help&apos; for a list of commands.</span>];
+	return [<span key="not-found-error" className="text-[#f38ba8]">Command not found: &apos;{command}&apos;. Type &apos;help&apos; for a list of commands.</span>];
   };
 
   const handleSubmit = (e: React.FormEvent) => {
