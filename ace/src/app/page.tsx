@@ -100,7 +100,7 @@ export default function Home(){
 
         	    <Info size={24} className="text-[#89b4fa] flex-shrink-0" />
         	    <p className="text-sm text-[#9399b2]">
-          	    <strong className="text-[#f38ba8]">Note:</strong> All commands listed in the 'Features' section are fully functional in the real A.C.E. More commands are being progressively added to this simulation.
+          	    <strong className="text-[#f38ba8]">Note:</strong> All commands listed in the &apos;Features&apos; section are fully functional in the real A.C.E. More commands are being progressively added to this simulation.
         	   </p>
         	  </div>
 		</section>
