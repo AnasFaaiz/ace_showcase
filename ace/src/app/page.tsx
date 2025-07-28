@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Terminal from './components/Terminal';
 import FeaturesSection from './components/FeaturesSection';
 import Playground from './components/playground';
+import { Info } from 'lucide-react';
 
 const TypingText = ({ text, onComplete }: { text: string; onComplete?: () => void }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -80,11 +81,28 @@ export default function Home(){
 
 		<section className="w-full py-10">
 		  <div className="text-center mb-12">
-		    <h2 className="text-4x1 md:text-5x1 font-bold text-[#cdd6f4]">
+		    <h2 className="text-4xl md:text-5x1 font-bold text-[#cdd6f4]">
 		    Try A.C.E. Live
 		    </h2>
+		    <p className="mt-4 text-lg text-[#9399b2] max-w-3xl mx-auto">
+          		Use the playground below to get a feel for how A.C.E. works. This is an interactive simulation of the real command-line tool.
+        	    </p>
 		  </div>
 		  <Playground />
+		  <div 
+        	    className="
+          		mt-8 max-w-3xl mx-auto 
+          		p-4 bg-[#181825] 
+          		border border-[#313244] 
+          		rounded-lg 
+          		flex items-center gap-4
+        	    ">
+
+        	    <Info size={24} className="text-[#89b4fa] flex-shrink-0" />
+        	    <p className="text-sm text-[#9399b2]">
+          	    <strong className="text-[#f38ba8]">Note:</strong> All commands listed in the 'Features' section are fully functional in the real A.C.E. More commands are being progressively added to this simulation.
+        	   </p>
+        	  </div>
 		</section>
 	   </main>
 	);

@@ -20,7 +20,10 @@ type SimulatedProjects = {
 
 const Playground = () => {
   const [input, setInput] = useState('');
-  const [history, setHistory] = useState<React.ReactNode[]>([]);
+  const [history, setHistory] = useState<React.ReactNode[]>([
+	   "Try typing 'help' to see a list of available commands.",
+	   ""
+	]);
 
   const [simulatedProjects, setSimulatedProjects] = useState<Record<string, SimulatedProjects>>({});
   const terminalEndRef = useRef<null | HTMLDivElement>(null);

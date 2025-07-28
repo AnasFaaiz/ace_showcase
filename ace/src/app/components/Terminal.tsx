@@ -5,7 +5,7 @@ type TerminalProps = {
 	children: React.ReactNode;
 };
 
-const Terminal = ({ title = "ACE Assistant", children }: TerminalProps) => {
+const Terminal = ({ title = "ACE AI Assisstant", children }: TerminalProps) => {
 	return (
 		<div className="w-full max-w-4xl rounded-lg shadow-2xl border border-[#313244]">
 
