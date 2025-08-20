@@ -14,7 +14,7 @@ const AuroraBackground = () => {
     }
   }, []);
 
-  const maskStyle: React.CSSProperties = {
+  const maskStyle: React.CSSProperties & { [key:string]: string }= {
     '--mouse-x': `${mousePosition.x}px`,
     '--mouse-y': `${mousePosition.y}px`,
     maskImage: `radial-gradient(circle 300px at var(--mouse-x) var(--mouse-y), black, transparent)`,
