@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import AuroraBackground from './components/AuroraBackground';
-import type { metadata } from "next";
+import type { Metadata } from "next";
 import './globals.css';
 import  { Inter } from "next/font/google";
 
