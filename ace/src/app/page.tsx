@@ -6,6 +6,7 @@ import Terminal from './components/Terminal';
 import FeaturesSection from './components/FeaturesSection';
 import Playground from './components/playground';
 import { Info } from 'lucide-react';
+import GlitchedLogo from './components/GlitchedLogo';
 
 const TypingText = ({ text, onComplete }: { text: string; onComplete?: () => void }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -42,8 +43,11 @@ export default function Home(){
 		
 	   <main className=" relative flex min-h-screen flex-col items-center text-[#cdd6f4] px-2 top-20">
 		<section className="w-full flex justify-end ">
+		   <div className="w-1/2 flex justify-center">
+			<GlitchedLogo />
+		   </div>
 		   <div className="w-1/2 p-4 mr-5">
-	   		<Terminal title="ace@anas: ~" >
+			<Terminal title="ace@anas: ~" >
 			  <div className="flex items-center">
 			    <p className="text-[#a6e3a1]">ace@anas</p>
 			    <p className="text-white">:</p>
