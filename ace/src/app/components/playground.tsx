@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Terminal from './Terminal';
-import { runACE } from "@/lib/aceApi";
+import AgentResponse from "./AgentResponse";
 
 const API_BASE = "http://127.0.0.1:8000";
 
@@ -25,65 +25,52 @@ const Playground = () => {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<React.ReactNode[]>([]);
 
-  const terminalEndRef = useRef<null | HTMLDivElement>(null);
+  const terminalEndRef = useRef<HTMLDivElement | null>(null);
+  // Used later for command hints / validation
   const [allowedCommands, setAllowedCommands] = useState<string[]>([]);
 
-  const handleCommand = async (input: string): Promise<React.ReactNode[]> => {
-    const cleaned = input.trim().toLowerCase();
 
-    if (cleaned === "clear") {
-      setHistory([]);
-      return [];
-    }
+  async function runACE(command: string) {
+    const res = await fetch(`${API_BASE}/run`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ command }),
+    });
 
-    if (!cleaned.startsWith("ace ")) {
-      return [
-        <span key="err" className="text-[#f38ba8]">
-          Commands must start with `ace`
-        </span>,
-      ];
-    }
-
-    const command = cleaned.replace("ace ", "");
-
-    if (!allowedCommands.includes(command)) {
-      return [
-        <span key="deny" className="text-[#f38ba8]">
-          Command `{command}` not allowed in web mode
-        </span>,
-      ];
-    }
-
-    try {
-      const result = await runACE(command);
-      return [
-        <pre key="out" className="whitespace-pre-wrap">
-          {JSON.stringify(result, null, 2)}
-        </pre>,
-      ];
-    } catch {
-      return [
-        <span key="fail" className="text-[#f38ba8]">
-          Failed to reach ACE backend
-        </span>,
-      ];
-    }
-  };
+    const data = await res.json();
+    return data.Output;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!input.trim()) return;
+
+    const userCommand = input.trim();
+
     const commandLine = (
       <Prompt>
-        <span className="text-white">{input}</span>
+        <span className="text-white">{userCommand}</span>
       </Prompt>
     );
 
-    const output = await handleCommand(input);
-
-    setHistory((prev) => [...prev, commandLine, ...output]);
+    setHistory(prev => [...prev, commandLine]);
     setInput("");
+
+    const response = await runACE(userCommand);
+
+    setHistory(prev => [
+      ...prev,
+      <AgentResponse
+        key={Date.now()}
+        data={response}
+        onAction={(cmd) => {
+          setInput(cmd);
+        }}
+      />
+    ]);
   };
+
 
   useEffect(() => {
     terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
